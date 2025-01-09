@@ -23,17 +23,17 @@ function calculator() {
 
   // calculate pro rata
   if(document.getElementById('calcProRata').checked) {
-    var earnedFactor = Math.round(((forceDays / termDays) + Number.EPSILON)*1000)/1000;
-    var unearnedFactor = Math.round(((remainingDays / termDays) + Number.EPSILON)*1000)/1000;
+    var earnedFactor = Math.round(((forceDays / termDays) + Number.EPSILON)*100)/100;
+    var unearnedFactor = Math.round(((remainingDays / termDays) + Number.EPSILON)*100)/100;
   // calculate short rate
   }else if(document.getElementById('calcShortRate').checked) {
-    var earnedFactor = Math.round(((1 - ((remainingDays / termDays ) * 0.9)) + Number.EPSILON)*1000)/1000;
-    var unearnedFactor = Math.round((((remainingDays / termDays) * 0.9) + Number.EPSILON)*1000)/1000;
+    var earnedFactor = Math.round(((1 - ((remainingDays / termDays ) * 0.9)) + Number.EPSILON)*100)/100;
+    var unearnedFactor = Math.round((((remainingDays / termDays) * 0.9) + Number.EPSILON)*100)/100;
   }
 
   // calculate premiums
-  var earnedPremium = Math.round(((totalPremium * earnedFactor) + Number.EPSILON)*1000)/1000;
-  var unearnedPremium = Math.round(((totalPremium * unearnedFactor) + Number.EPSILON)*1000)/1000;
+  var earnedPremium = Math.round(((totalPremium * earnedFactor) + Number.EPSILON)*100)/100;
+  var unearnedPremium = Math.round(((totalPremium * unearnedFactor) + Number.EPSILON)*100)/100;
 
   // calculate breakdown
   var calcBreak = +breakDO + +breakEO + +breakCyber + +breakLEI + +breakCGL + +breakProperty + +breakEB;
