@@ -3,122 +3,148 @@
   <head>
     <meta charset="UTF-8">
     <meta name=""viewport" content=""width=device-width, initial-scale="1.0">
+
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Insurance premium calculator for pro-rata and short-rate calculations.?">
+
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
+
   <body>
     <header>
-      <h1>Calculator</h1>
+      <h1>Premium Calculator</h1>
     </header>
 
     <main>
-
       <form action="/action_page.php">
-        <div class="flex-container">
-          <div class="flex-1">
-            <h2>Policy Details</h2>
-            <label for="effectiveDate">Effective date:</label>
-            <input type="date" id="effectiveDate" name="effectiveDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            <label for="expiryDate">Expiry date:</label>
-            <input type="date" id="expiryDate" name="expiryDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Days in policy term: <span id="termDays">-</span>
-            <br><br>
-            <label for="cancelDate">Cancellation date</label>
-            <input type="date" id="cancelDate" name="cancelDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Days in force: <span id="forceDays">-</span>
-            <br>
-            Days remaining: <span id="remainingDays">-</span>
-            <br><br>
-            Factor method:
-            <input type="radio" name="calcMethod" id="calcProRata" value="Pro Rata" onclick="calculator();" /> Pro Rata
-            <input type="radio" name="calcMethod" id="calcShortRate" value="Short Rate" onclick="calculator();"/> Short Rate
-            <br><br>
-            Earned factor: <span id="earnedFactor">-</span>
-            <br>
-            Unearned factor: <span id="unearnedFactor">-</span>
-            <br><br>
-            <label for="totalPremium">Total premium:</label>
-            <input type="number"  id="totalPremium" name="totalPremium" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedPremium">-</span>
-            <br>
-            Return premium: <span id="unearnedPremium">-</span>
-          </div>
-
-          <div class="flex-2">
-            <h2>Breakdown</h2>
-            <p><span id="checkMatch">Total breakdown: N/A</span></p>
-
-            <label for="breakDO">D&O:</label>
-            <input type="number" id="breakDO" name="breakDO" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedDO">-</span>
-            <br>
-            Return premium: <span id="unearnedDO">-</span>
-            <br><br>
-
-            <label for="breakEO">E&O:</label>
-            <input type="number" id="breakEO" name="breakEO" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedEO">-</span>
-            <br>
-            Return premium: <span id="unearnedEO">-</span>
-            <br><br>
-
-            <label for="breakCyber">Cyber:</label>
-            <input type="number" id="breakCyber" name="breakCyber" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedCyber">-</span>
-            <br>
-            Return premium: <span id="unearnedCyber">-</span>
-            <br><br>
-
-            <label for="breakLEI">Legal Expense:</label>
-            <input type="number" id="breakLEI" name="breakLEI" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedLEI">-</span>
-            <br>
-            Return premium: <span id="unearnedLEI">-</span>
-            <br><br>
-
-            <label for="breakCGL">CGL:</label>
-            <input type="number" id="breakCGL" name="breakCGL" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedCGL">-</span>
-            <br>
-            Return premium: <span id="unearnedCGL">-</span>
-            <br><br>
-
-            <label for="breakProperty">Property:</label>
-            <input type="number" id="breakProperty" name="breakProperty" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedProperty">-</span>
-            <br>
-            Return premium: <span id="unearnedProperty">-</span>
-            <br><br>
-
-            <label for="breakEB">Equipment Breakdown::</label>
-            <input type="number" id="breakEB" name="breakEB" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-            <br>
-            Earned premium: <span id="earnedEB">-</span>
-            <br>
-            Return premium: <span id="unearnedEB">-</span>
-            <br><br>
-          </div>
+      <div class="flex-container">
+        <div class="flex-1">
+          <h2>Policy Details</h2>
+          <label for="effectiveDate">Effective date:</label>
+          <input type="date" id="effectiveDate" name="effectiveDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
+          <br>
+          <label for="expiryDate">Expiry date:</label>
+          <input type="date" id="expiryDate" name="expiryDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
+          <br>
+          Days in policy term: <span id="termDays">-</span>
+          <br><br>
+          <label for="cancelDate">Cancellation date:</label>
+          <input type="date" id="cancelDate" name="cancelDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
+          <br>
+          Days in force: <span id="forceDays">-</span>
+          <br>
+          Days remaining: <span id="remainingDays">-</span>
+          <br><br>
+          <label for="totalPremium">Total premium:</label>
+          <input type="number"  id="totalPremium" name="totalPremium" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
+          
         </div>
+
+        <div class="flex-2">
+          <h2>Factor Method</h2>
+          Factor method:
+          <input type="radio" name="calcMethod" id="calcProRata" value="Pro Rata" checked="checked" onclick="calculator();" /> Pro Rata
+          <input type="radio" name="calcMethod" id="calcShortRate" value="Short Rate" onclick="calculator();"/> Short Rate
+          <br><br>
+          <table>
+            <tr>
+              <th></th>
+              <th>Earned</th>
+              <th>Unearned</th>
+            </tr>
+            <tr>
+              <td>Factor</td>
+              <td><span id="earnedFactor">-</span></td>
+              <td><span id="unearnedFactor">-</span></td>
+            </tr>
+            <tr>
+              <td>Premium</td>
+              <td><span id="earnedPremium">-</span></td>
+              <td><span id="unearnedPremium">-</span></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="flex-3">
+          <h2>Premium Breakdown</h2>
+          <blockquote><span id="checkMatch">Total breakdown: N/A</span></blockquote>
+
+          <table>
+            <tr>
+              <th>Coverage</th>
+              <th>Premium</th>
+              <th>% of Total</th>
+              <th>Earned Premium</th>
+              <th>Unearned Premium </th>
+            </tr>
+            <tr>
+              <td><label for="breakDO">D&O</label></td>
+              <td><input type="number" id="breakDO" name="breakDO" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentDO">-</span></td>
+              <td><span id="earnedDO">-</span></td>
+              <td><span id="unearnedDO">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakEO">E&O</label></td>
+              <td><input type="number" id="breakEO" name="breakEO" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentEO">-</span></td>
+              <td><span id="earnedEO">-</span></td>
+              <td><span id="unearnedEO">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakCyber">Cyber</label></td>
+              <td><input type="number" id="breakCyber" name="breakCyber" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentCyber">-</span></td>
+              <td><span id="earnedCyber">-</span></td>
+              <td><span id="unearnedCyber">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakLEI">Legal Expense</label></td>
+              <td><input type="number" id="breakLEI" name="breakLEI" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentLEI">-</span></td>
+              <td><span id="earnedLEI">-</span></td>
+              <td><span id="unearnedLEI">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakCGL">CGL</label></td>
+              <td><input type="number" id="breakCGL" name="breakCGL" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentCGL">-</span></td>
+              <td><span id="earnedCGL">-</span></td>
+              <td><span id="unearnedCGL">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakProperty">Property</label></td>
+              <td><input type="number" id="breakProperty" name="breakProperty" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentProperty">-</span></td>
+              <td><span id="earnedProperty">-</span></td>
+              <td><span id="unearnedProperty">-</span></td>
+            </tr>
+            <tr>
+              <td><label for="breakEB">Equipment Breakdown</label></td>
+              <td><input type="number" id="breakEB" name="breakEB" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+              <td><span id="percentEB">-</span></td>
+              <td><span id="earnedEB">-</span></td>
+              <td><span id="unearnedEB">-</span></td>
+            </tr>
+          </table>
       </form>
 
-      <button onclick="calculator()">Calculate</button>
-
+          <div class="flex-4">
+            <button onclick="calculator()">Calculate</button>
+          </div>
+      </div>
    </main>
 
    <footer>
-    <p>Created by <a href="https://haothitran.com">Hao Tran</a>.</p>
-    <p>Note: Calculations are rounded to the nearest hundredth decimal. As such, there may sometimes be issues of rounding error.</p>
+    <ul>
+      <li>Created by <a href="https://haothitran.com">Hao Tran</a>.</li>
+      <li>Calculations are rounded to the nearest hundredth decimal. As such, there may sometimes be issues of rounding error.</li>
+      <li>Although effort was made to insure the accuracy of this calculator, there is no guarantee on the accuracy of the calculations and results. This calculator is intended for personal and informational use only and does not constitute advice. </li>
+    </ul>
    </footer>
+
+   <script src="assets/calculator.js"></script>
   </body>
-  <script src="scripts/calculator.js"></script>
 </html>
