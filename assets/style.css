@@ -27,7 +27,7 @@ form, input {
 
 header, nav, main, article, section, aside, footer,
 blockquote, pre, img, audio, video,
-table, form {
+form {
   display: block;
 }
 
@@ -175,6 +175,9 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+.calcMethod {
+  margin: 1em 0;
+}
 .calcMethod span {
   margin-right: 16px;
 }
