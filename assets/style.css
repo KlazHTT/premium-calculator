@@ -1,24 +1,59 @@
-html, body, div, span, applet, object, iframe,
+/*------------------------------------------------------------------------------
+-- // RESETS
+------------------------------------------------------------------------------*/
+
+html { box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span,
+header, nav, main, article, section, aside, footer,
+h1, h2, h3, h4, h5, h6,
+p, strong, em, b, i, u, a, ul, ol, li,
+blockquote, pre, code, img, audio, video,
+table, caption, thead, tbody, tfoot, tr, th, td,
+form, input {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+header, nav, main, article, section, aside, footer,
+blockquote, pre, img, audio, video,
+table, form {
+  display: block;
+}
+
+/* -----------------------------------------------------------------------------
+-- // BASE
+----------------------------------------------------------------------------- */
+
 :root {
   --width: 900px;
   --font-family: Verdana, sans-serif;
   --font-scale: 1em;
-  --bg-100: #100F0F;
-  --bg-200: #1C1B1A;
-  --ui-100: #282726;
-  --ui-200: #343331;
-  --ui-300: #403E3C;
-  --text-100: #CECDC3;
-  --text-200: #878580;
-  --text-300: #575653;
-
-  --blue-400: #4385BE;
-  --cyan-400: #3AA99F;
-  --green-400: #879A39;
-  --orange-400: #DA702C;
-  --purple-400: #8B7EC8;
-  --red-400: #D14D41;
-  --yellow-400: #D0A215;
+  --bg-100: rgb(16, 15, 15);
+  --bg-200: rgb(28, 27, 26);
+  --ui-100: rgb(40, 39, 38);
+  --ui-200: rgb(52, 51, 49);
+  --ui-300: rgb(64, 62, 60);
+  --text-100: rgb(206, 205, 195);
+  --text-200: rgb(135, 133, 128);
+  --text-300: rgb(87, 86, 83);
+  --blue-400: rgb(67, 133, 190);
+  --cyan-400: rgb(58, 169, 159);
+  --green-400: rgb(135, 154, 57);
+  --orange-400: rgb(218, 112, 44);
+  --purple-400: rgb(139, 126, 200);
+  --red-400: rgb(209, 77, 65);
+  --yellow-400: rgb(208, 162, 21);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -32,8 +67,14 @@ body {
   background-color: var(--bg-100);
   font-family: var(--font-family);
   font-size: var(--font-scale);
+  font-weight: normal;
+  line-height: 1.5;
   color: var(--text-100);
 }
+
+/* -----------------------------------------------------------------------------
+-- // BASIC ELEMENTS
+----------------------------------------------------------------------------- */
 
 .blue { color: var(--blue-400); }
 .cyan { color: var(--cyan-400); }
@@ -42,13 +83,23 @@ body {
 .purple { color: var(--purple-400); }
 .red { color: var(--red-400); }
 
-h1, h2, h3 {
-  margin: 0;
-  padding: 0;
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
 }
 h2 {
-  margin: 1rem 0;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
 }
+
+p {
+  margin-bottom: 1em;
+  text-align: left;
+}
+p:last-child { margin-bottom: 0; }
 
 a,
 a:visited {
@@ -58,6 +109,11 @@ a:visited {
   text-decoration-thickness: 1px;
   text-decoration-style: solid;
   text-decoration-color: var(--cyan-400);
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
 }
 a:hover {
   color: var(--cyan-400);
@@ -67,32 +123,39 @@ a:hover {
 }
 
 ul {
-  margin: 0;
-  padding: 0 0 0 1rem;
+  margin-left: 1em;
+  padding-left: 1em;
 }
 li {
   list-style-type: square;
 }
 
-form {
-  margin: 0;
-  padding: 0; 
-}
-button {
-  margin-top: 2rem;
-  padding: 10px;
-  width: 100%;
-  border: 1px solid var(--ui-100);
+blockquote {
+  margin: 1em 0;
+  padding: 12px 16px;
+  border: 1px dashed var(--yellow-400);
   background-color: var(--bg-200);
-  color: var(--text-100); 
+  font-style: italic;
 }
-button:hover{
-  border: 1px solid var(--ui-300);
+
+/* -----------------------------------------------------------------------------
+-- // FORM
+----------------------------------------------------------------------------- */
+
+input,
+label {
+  cursor: pointer;
 }
+
 input {
   border: 1px solid var(--ui-100);
   background-color: var(--bg-200);
-  color: var(--text-100);
+  color: var(--purple-400);
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
 }
 input:hover {
   border-color: var(--ui-300);
@@ -101,6 +164,8 @@ input:focus {
   outline: none;
   border-color: var(--cyan-400);
 }
+
+/* Remove up and down arrows */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -110,17 +175,37 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-blockquote {
-  margin: 1rem 0;
-  padding: 16px;
-  border-top: 1px dotted var(--yellow-400);
-  border-right: 1px dotted var(--yellow-400);
-  border-bottom: 1px dotted var(--yellow-400);
-  border-left: 8px solid var(--yellow-400);
-  background-color: var(--bg-200);
+.calcMethod span {
+  margin-right: 16px;
+}
+input[type="radio"] {
+  height: 1em;
+  width: 1em;
+  margin: 0 4px 0 8px;
+}
+#calcProRata,
+#calcShortRate {
+  accent-color: var(--yellow-400);
 }
 
+button {
+  margin-top: 1em;
+  padding: 8px 16px;
+  border: 1px solid var(--ui-100);
+  background-color: var(--bg-200);
+  color: var(--text-100); 
+}
+button:hover{
+  border: 1px solid var(--ui-300);
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------------------------
+-- // TABLE
+----------------------------------------------------------------------------- */
+
 table {
+  margin: 1em 0;
   width: 100%; 
   border-collapse: collapse;
   border: 1px solid var(--ui-100);
@@ -130,21 +215,21 @@ tr {
   border: 1px solid var(--ui-100);
 }
 th {
-  padding: 4px 16px;
+  padding: 2px 16px;
   border-right: 1px solid var(--ui-100);
   background-color: var(--ui-200);
+  font-weight: bold;
+  vertical-align: middle;
 }
 td {
-  padding: 4px 16px;
+  padding: 2px 16px;
   border-right: 1px solid var(--ui-100);
+  vertical-align: middle;
 }
-tr td:nth-child(3) {
-  text-align: center;
-}
-tr td:nth-child(4),
-tr td:nth-child(5) { 
-  text-align: right;
-}
+
+/* -----------------------------------------------------------------------------
+-- // LAYOUT
+----------------------------------------------------------------------------- */
 
 header {
   margin-top: 4rem;
@@ -159,7 +244,7 @@ main {
   margin: 0;
   padding: 0;
   flex-direction: row;
-  gap: 2rem 1rem;
+  gap: 64px 32px;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
@@ -183,8 +268,8 @@ main {
 
 footer {
   margin-bottom: 4rem;
-  padding-top: 2rem;
-  border-top: 1px dotted var(--ui-100);
+  padding-top: 12px;
+  border-top: 1px dashed var(--ui-100);
   font-size: .875em;
   color: var(--text-200);
 }

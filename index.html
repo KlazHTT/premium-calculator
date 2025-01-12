@@ -44,10 +44,18 @@
 
         <div class="flex-2">
           <h2>Factor Method</h2>
-          Factor method:
-          <input type="radio" name="calcMethod" id="calcProRata" value="Pro Rata" checked="checked" onclick="calculator();" /> Pro Rata
-          <input type="radio" name="calcMethod" id="calcShortRate" value="Short Rate" onclick="calculator();"/> Short Rate
-          <br><br>
+
+          <div class="calcMethod">
+            <label for="calcProRata">
+              <input type="radio" name="calcMethod" id="calcProRata" value="Pro Rata" checked="checked" onclick="calculator();" >
+              <span>Pro Rata</span>
+            </label>
+            <label for="calcShortRate">
+              <input type="radio" name="calcMethod" id="calcShortRate" value="Short Rate" onclick="calculator();" >
+              <span>Short Rate</span>
+            </label>
+          </div>
+
           <table>
             <tr>
               <th></th>
@@ -140,6 +148,7 @@
    <footer>
     <ul>
       <li>Created by <a href="https://haothitran.com">Hao Tran</a>.</li>
+      <li>View the project repository on <a href="https://forge.haothitran.com/KlazHTT/premium-calculator">Gitea</a> or <a href="https://github.com/KlazHTT/premium-calculator">Github</a>.</li>
       <li>Calculations are rounded to the nearest hundredth decimal. As such, there may sometimes be issues of rounding error.</li>
       <li>Although effort was made to insure the accuracy of this calculator, there is no guarantee on the accuracy of the calculations and results. This calculator is intended for personal and informational use only and does not constitute advice. </li>
     </ul>
