@@ -6,7 +6,7 @@
 
     <title>Premium Calculator</title>
 
-    <meta name="description" content="Insurance premium calculator for pro-rata and short-rate calculations.?">
+    <meta name="description" content="Insurance premium calculator for pro-rata and short-rate calculations.">
 
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -18,28 +18,39 @@
     </header>
 
     <main>
-      <form action="/action_page.php">
       <div class="flex-container">
         <div class="flex-1">
           <h2>Policy Details</h2>
-          <label for="effectiveDate">Effective date:</label>
-          <input type="date" id="effectiveDate" name="effectiveDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-          <br>
-          <label for="expiryDate">Expiry date:</label>
-          <input type="date" id="expiryDate" name="expiryDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-          <br>
-          Days in policy term: <span id="termDays">-</span>
-          <br><br>
-          <label for="cancelDate">Cancellation date:</label>
-          <input type="date" id="cancelDate" name="cancelDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-          <br>
-          Days in force: <span id="forceDays">-</span>
-          <br>
-          Days remaining: <span id="remainingDays">-</span>
-          <br><br>
-          <label for="totalPremium">Total premium:</label>
-          <input type="number"  id="totalPremium" name="totalPremium" onblur="calculator()" min="0" oninput="validity.valid||(value='')">
-          
+          <table>
+            <tr>
+              <th><label for="effectiveDate">Effective date</label></th>
+              <td><input type="date" id="effectiveDate" name="effectiveDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+            </tr>
+            <tr>
+              <th><label for="expiryDate">Expiry date:</label></th>
+              <td><input type="date" id="expiryDate" name="expiryDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+            </tr>
+            <tr>
+              <th><label for="cancelDate">Cancellation date:</label></th>
+              <td><input type="date" id="cancelDate" name="cancelDate" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+            </tr>
+            <tr>
+              <th><label for="totalPremium">Total premium:</label></th>
+              <td><input type="number"  id="totalPremium" name="totalPremium" onblur="calculator()" min="0" oninput="validity.valid||(value='')"></td>
+            </tr>
+            <tr>
+              <th>Days in policy term:</th>
+              <td><span id="termDays">-</span></td>
+            </tr>
+            <tr>
+              <th>Days in force:</th>
+              <td><span id="forceDays">-</span></td>
+            </tr>
+            <tr>
+              <th>Days remaining:</th>
+              <td><span id="remainingDays">-</span></td>
+            </tr>
+          </table>
         </div>
 
         <div class="flex-2">
@@ -58,34 +69,34 @@
 
           <table>
             <tr>
-              <th></th>
-              <th>Earned</th>
-              <th>Unearned</th>
+              <td class="with-border"></td>
+              <th class="with-border">Earned</th>
+              <th class="with-border">Unearned</th>
             </tr>
             <tr>
-              <td>Factor</td>
-              <td><span id="earnedFactor">-</span></td>
-              <td><span id="unearnedFactor">-</span></td>
+              <th class="with-border">Factor</th>
+              <td class="with-border"><span id="earnedFactor">-</span></td>
+              <td class="with-border"><span id="unearnedFactor">-</span></td>
             </tr>
             <tr>
-              <td>Premium</td>
-              <td><span id="earnedPremium">-</span></td>
-              <td><span id="unearnedPremium">-</span></td>
+              <th class="with-border">Premium</th>
+              <td class="with-border"><span id="earnedPremium">-</span></td>
+              <td class="with-border"><span id="unearnedPremium">-</span></td>
             </tr>
           </table>
         </div>
 
         <div class="flex-3">
-          <h2>Premium Breakdown</h2>
+          <h2>Premium Breakdown (Optional)</h2>
           <blockquote><span id="checkMatch">Total breakdown: N/A</span></blockquote>
 
           <table>
             <tr>
               <th>Coverage</th>
               <th>Premium</th>
-              <th>% of Total</th>
+              <th>Breakdown (%)</th>
               <th>Earned Premium</th>
-              <th>Unearned Premium </th>
+              <th>Unearned Premium</th>
             </tr>
             <tr>
               <td><label for="breakDO">D&O</label></td>
@@ -137,23 +148,30 @@
               <td><span id="unearnedEB">-</span></td>
             </tr>
           </table>
-      </form>
 
           <div class="flex-4">
-            <button onclick="calculator()">Calculate</button>
+            <button onClick="calculator()">Calculate</button>
           </div>
       </div>
    </main>
 
    <footer>
+    <select name="theme-select" id="theme-select">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="slate">Slate</option>
+      <option value="forest">Forest</option>
+      <option value="summer">Summer</option>
+    </select>
+
     <ul>
-      <li>Made by <a href="https://haothitran.com">Hao Tran</a>.</li>
-      <li>View the project repository on <a href="https://forge.haothitran.com/KlazHTT/premium-calculator">Gitea</a> or <a href="https://github.com/KlazHTT/premium-calculator">Github</a>.</li>
-      <li>Calculations are rounded to the nearest hundredth decimal. As such, there may sometimes be issues of rounding error.</li>
-      <li>Although effort was made to insure the accuracy of this calculator, there is no guarantee on the accuracy of the calculations and results. This calculator is intended for personal and informational use only and does not constitute advice. </li>
+      <li>Made by <a href="https://haothitran.com">Hao Tran</a>. View the project repository on <a href="https://forge.haothitran.com/KlazHTT/premium-calculator">Gitea</a> or <a href="https://github.com/KlazHTT/premium-calculator">Github</a>.</li>
+      <li>Calculations are rounded to the nearest hundredth. As such, there may be rounding discrepancies.</li>
+      <li>This calculator is intended for informational use only and does not constitute advice. </li>
     </ul>
    </footer>
 
    <script src="assets/calculator.js"></script>
+   <script src="assets/theme.js"></script>
   </body>
 </html>

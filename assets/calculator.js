@@ -402,8 +402,6 @@ function calculator() {
     const shortRateFactor = shortRate[searchDate];
     var earnedFactor =  shortRateFactor;
     var unearnedFactor = Math.round(((1 - shortRateFactor) + Number.EPSILON)*1000)/1000;
-    document.getElementById("earnedFactor").className = 'blue';
-    document.getElementById("unearnedFactor").className = 'blue';
   }else {
     var earnedFactor = 'ERROR'
     var unearnedFactor = 'ERROR'
@@ -414,7 +412,7 @@ function calculator() {
   var earnedPremium = Math.round(((totalPremium * earnedFactor) + Number.EPSILON)*100)/100;
   var unearnedPremium = Math.round(((totalPremium * unearnedFactor) + Number.EPSILON)*100)/100;
   document.getElementById("earnedPremium").className = 'green';
-  document.getElementById("unearnedPremium").className = 'orange';
+  document.getElementById("unearnedPremium").className = 'red';
 
   // calculate breakdown
   var calcBreak = +breakDO + +breakEO + +breakCyber + +breakLEI + +breakCGL + +breakProperty + +breakEB;
@@ -461,27 +459,27 @@ function calculator() {
     var percentEB = Math.round((((breakEB / totalPremium) * 100)  + Number.EPSILON)*100)/100;
     var earnedEB = Math.round(((breakEB * earnedFactor) + Number.EPSILON)*100)/100;
     var unearnedEB = Math.round(((breakEB * unearnedFactor) + Number.EPSILON)*100)/100;
-    document.getElementById("percentDO").className = 'blue';
+    document.getElementById("percentDO").className = 'normal';
     document.getElementById("earnedDO").className = 'green';
-    document.getElementById("unearnedDO").className = 'orange';
-    document.getElementById("percentEO").className = 'blue';
+    document.getElementById("unearnedDO").className = 'red';
+    document.getElementById("percentEO").className = 'normal';
     document.getElementById("earnedEO").className = 'green';
-    document.getElementById("unearnedEO").className = 'orange';
-    document.getElementById("percentCyber").className = 'blue';
+    document.getElementById("unearnedEO").className = 'red';
+    document.getElementById("percentCyber").className = 'normal';
     document.getElementById("earnedCyber").className = 'green';
-    document.getElementById("unearnedCyber").className = 'orange';
-    document.getElementById("percentLEI").className = 'blue';
+    document.getElementById("unearnedCyber").className = 'red';
+    document.getElementById("percentLEI").className = 'normal';
     document.getElementById("earnedLEI").className = 'green';
-    document.getElementById("unearnedLEI").className = 'orange';
-    document.getElementById("percentCGL").className = 'blue';
+    document.getElementById("unearnedLEI").className = 'red';
+    document.getElementById("percentCGL").className = 'normal';
     document.getElementById("earnedCGL").className = 'green';
-    document.getElementById("unearnedCGL").className = 'orange';
-    document.getElementById("percentProperty").className = 'blue';
+    document.getElementById("unearnedCGL").className = 'red';
+    document.getElementById("percentProperty").className = 'normal';
     document.getElementById("earnedProperty").className = 'green';
-    document.getElementById("unearnedProperty").className = 'orange';
-    document.getElementById("percentEB").className = 'blue';
+    document.getElementById("unearnedProperty").className = 'red';
+    document.getElementById("percentEB").className = 'normal';
     document.getElementById("earnedEB").className = 'green';
-    document.getElementById("unearnedEB").className = 'orange';
+    document.getElementById("unearnedEB").className = 'red';
   }else {
     var percentDO = 'ERROR'
     var earnedDO = 'ERROR'
