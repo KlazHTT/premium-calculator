@@ -374,6 +374,7 @@ function calculator() {
   var cancelDate = document.getElementById("cancelDate").value;
   var totalPremium = document.getElementById("totalPremium").value;
   var breakDO = document.getElementById("breakDO").value || 0;
+  var breakEPL = document.getElementById("breakEPL").value || 0;
   var breakEO = document.getElementById("breakEO").value || 0;
   var breakCyber = document.getElementById("breakCyber").value || 0;
   var breakLEI = document.getElementById("breakLEI").value || 0;
@@ -415,7 +416,7 @@ function calculator() {
   document.getElementById("unearnedPremium").className = 'red';
 
   // calculate breakdown
-  var calcBreak = +breakDO + +breakEO + +breakCyber + +breakLEI + +breakCGL + +breakProperty + +breakEB;
+  var calcBreak = +breakDO + +breakEPL + +breakEO + +breakCyber + +breakLEI + +breakCGL + +breakProperty + +breakEB;
   // check if breakdown matches total premium
   var calcMatch = calcBreak-totalPremium;
   if(totalPremium<calcBreak && totalPremium > 1) {
@@ -441,6 +442,9 @@ function calculator() {
     var percentDO = Math.round((((breakDO / totalPremium) * 100) + Number.EPSILON)*100)/100;
     var earnedDO = Math.round(((breakDO * earnedFactor) + Number.EPSILON)*100)/100;
     var unearnedDO = Math.round(((breakDO * unearnedFactor) + Number.EPSILON)*100)/100;
+    var percentEPL = Math.round((((breakEPL / totalPremium) * 100) + Number.EPSILON)*100)/100;
+    var earnedEPL = Math.round(((breakEPL * earnedFactor) + Number.EPSILON)*100)/100;
+    var unearnedEPL = Math.round(((breakEPL * unearnedFactor) + Number.EPSILON)*100)/100;
     var percentEO = Math.round((((breakEO / totalPremium) * 100) + Number.EPSILON)*100)/100;
     var earnedEO = Math.round(((breakEO * earnedFactor) + Number.EPSILON)*100)/100;
     var unearnedEO = Math.round(((breakEO * unearnedFactor) + Number.EPSILON)*100)/100;
@@ -462,6 +466,9 @@ function calculator() {
     document.getElementById("percentDO").className = 'normal';
     document.getElementById("earnedDO").className = 'green';
     document.getElementById("unearnedDO").className = 'red';
+    document.getElementById("percentEPL").className = 'normal';
+    document.getElementById("earnedEPL").className = 'green';
+    document.getElementById("unearnedEPL").className = 'red';
     document.getElementById("percentEO").className = 'normal';
     document.getElementById("earnedEO").className = 'green';
     document.getElementById("unearnedEO").className = 'red';
@@ -484,6 +491,9 @@ function calculator() {
     var percentDO = '-'
     var earnedDO = '-'
     var unearnedDO = '-'
+    var percentEPL = '-'
+    var earnedEPL = '-'
+    var unearnedEPL = '-'
     var percentEO = '-'
     var earnedEO = '-'
     var unearnedEO = '-'
@@ -505,6 +515,9 @@ function calculator() {
     document.getElementById("percentDO").className = 'red';
     document.getElementById("earnedDO").className = 'red';
     document.getElementById("unearnedDO").className = 'red';
+    document.getElementById("percentEPL").className = 'red';
+    document.getElementById("earnedEPL").className = 'red';
+    document.getElementById("unearnedEPL").className = 'red';
     document.getElementById("percentEO").className = 'red';
     document.getElementById("earnedEO").className = 'red';
     document.getElementById("unearnedEO").className = 'red';
@@ -538,6 +551,9 @@ function calculator() {
   document.getElementById("percentDO").innerHTML = percentDO;
   document.getElementById("earnedDO").innerHTML = earnedDO;
   document.getElementById("unearnedDO").innerHTML = unearnedDO;
+  document.getElementById("percentEPL").innerHTML = percentEPL;
+  document.getElementById("earnedEPL").innerHTML = earnedEPL;
+  document.getElementById("unearnedEPL").innerHTML = unearnedEPL;
   document.getElementById("percentEO").innerHTML = percentEO;
   document.getElementById("earnedEO").innerHTML = earnedEO;
   document.getElementById("unearnedEO").innerHTML = unearnedEO;
