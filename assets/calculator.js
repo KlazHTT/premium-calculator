@@ -394,8 +394,8 @@ function calculator() {
   if(document.getElementById('calcProRata').checked) {
     var earnedFactor = Math.round(((forceDays / termDays) + Number.EPSILON)*1000)/1000;
     var unearnedFactor = Math.round(((remainingDays / termDays) + Number.EPSILON)*1000)/1000;
-    document.getElementById("earnedFactor").className = 'blue';
-    document.getElementById("unearnedFactor").className = 'blue';
+    document.getElementById("earnedFactor").className = 'normal';
+    document.getElementById("unearnedFactor").className = 'normal';
   // calculate short rate
   }else if(document.getElementById('calcShortRate').checked) {
     const searchDate = forceDays;
@@ -481,27 +481,27 @@ function calculator() {
     document.getElementById("earnedEB").className = 'green';
     document.getElementById("unearnedEB").className = 'red';
   }else {
-    var percentDO = 'ERROR'
-    var earnedDO = 'ERROR'
-    var unearnedDO = 'ERROR'
-    var percentEO = 'ERROR'
-    var earnedEO = 'ERROR'
-    var unearnedEO = 'ERROR'
-    var percentCyber = 'ERROR'
-    var earnedCyber = 'ERROR'
-    var unearnedCyber = 'ERROR'
-    var percentLEI = 'ERROR'
-    var earnedLEI = 'ERROR'
-    var unearnedLEI = 'ERROR'
-    var percentCGL = 'ERROR'
-    var earnedCGL = 'ERROR'
-    var unearnedCGL = 'ERROR'
-    var percentProperty = 'ERROR'
-    var earnedProperty = 'ERROR'
-    var unearnedProperty = 'ERROR'
-    var percentEB = 'ERROR'
-    var earnedEB = 'ERROR'
-    var unearnedEB = 'ERROR'
+    var percentDO = '-'
+    var earnedDO = '-'
+    var unearnedDO = '-'
+    var percentEO = '-'
+    var earnedEO = '-'
+    var unearnedEO = '-'
+    var percentCyber = '-'
+    var earnedCyber = '-'
+    var unearnedCyber = '-'
+    var percentLEI = '-'
+    var earnedLEI = '-'
+    var unearnedLEI = '-'
+    var percentCGL = '-'
+    var earnedCGL = '-'
+    var unearnedCGL = '-'
+    var percentProperty = '-'
+    var earnedProperty = '-'
+    var unearnedProperty = '-'
+    var percentEB = '-'
+    var earnedEB = '-'
+    var unearnedEB = '-'
     document.getElementById("percentDO").className = 'red';
     document.getElementById("earnedDO").className = 'red';
     document.getElementById("unearnedDO").className = 'red';

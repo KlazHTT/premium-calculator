@@ -42,63 +42,87 @@ form {
 }
 
 :root.light {
-  --bg-100:rgb(255, 252, 240); 
-  --bg-200: rgb(242, 240, 229); 
-  --text-100: rgb(16, 15, 15);
-  --text-200: rgb(111, 110, 105);
-  --ui-100: rgb(183, 181, 172); 
-  --ui-200: rgb(111, 110, 105); 
-  --highlight-accent: rgb(32, 94, 170);
-  --highlight-earned: rgb(41, 119, 11);
-  --highlight-unearned: rgb(200, 52, 41);
+  --bg-100:rgb(250, 250, 250); 
+  --bg-200: rgb(220, 220, 220); 
+  --text-100: rgb(20, 20, 20);
+  --text-200: rgb(100, 100, 100);
+  --ui-100: rgb(180, 180, 180); 
+  --ui-200: rgb(80, 80, 80); 
+  --highlight-accent: rgb(30, 80, 200);
+  --highlight-earned: rgb(40, 120, 20);
+  --highlight-unearned: rgb(180, 20, 40);
 }
 
 :root.dark {
-  --bg-100:rgb(16, 15, 15);
-  --bg-200: rgb(28, 27, 26);
-  --text-100: rgb(206, 205, 195);
-  --text-200: rgb(135, 133, 128);
-  --ui-100: rgb(40, 39, 38);
-  --ui-200: rgb(52, 51, 49);
-  --highlight-accent: rgb(63, 150, 231);
-  --highlight-earned: rgb(75, 182, 65);
-  --highlight-unearned: rgb(221, 82, 70);
+  --bg-100:rgb(15, 15, 15);
+  --bg-200: rgb(20, 20, 20);
+  --text-100: rgb(210, 210, 210);
+  --text-200: rgb(100, 100, 100);
+  --ui-100: rgb(32, 32, 32);
+  --ui-200: rgb(96, 96, 96);
+  --highlight-accent: rgb(50, 120, 230);
+  --highlight-earned: rgb(75, 185, 70);
+  --highlight-unearned: rgb(225, 70, 70);
+}
+
+:root.summer {
+  --bg-100:rgb(241, 222, 188); 
+  --bg-200: rgb(240, 225, 204);
+  --text-100: #FD673A;
+  --text-200: rgb(216, 143, 47);
+  --ui-100: rgb(255, 186, 68);
+  --ui-200: rgb(241, 112, 166); 
+  --highlight-accent: rgb(13, 150, 186);
+  --highlight-earned: rgb(0, 158, 84);
+  --highlight-unearned: rgb(248, 84, 75);
 }
 
 :root.slate {
   --bg-100:rgb(20, 26, 38); 
   --bg-200: rgb(25, 31, 44); 
-  --text-100: rgb(242, 242, 242);
-  --text-200: rgb(138, 138, 138);
+  --text-100: rgb(240, 240, 240);
+  --text-200: rgb(115, 115, 133);
   --ui-100: rgb(35, 48, 75); 
-  --ui-200: rgb(26, 36, 58); 
-  --highlight-accent: rgb(27, 183, 255);
-  --highlight-earned: rgb(0, 255, 170);
-  --highlight-unearned: rgb(243, 76, 64);
+  --ui-200: rgb(23, 102, 138); 
+  --highlight-accent: rgb(216, 183, 39);
+  --highlight-earned: rgb(6, 211, 143);
+  --highlight-unearned: rgb(243, 66, 53);
+}
+
+:root.tokyo {
+  --bg-100: #16161f;
+  --bg-200: #1a1b26;
+  --text-100: #c0caf5;
+  --text-200: #737da0;
+  --ui-100: #353d50;
+  --ui-200: #b98331;
+  --highlight-accent: #2ac3de;
+  --highlight-earned: #95cc5a;
+  --highlight-unearned: #f8627d;
+}
+
+:root.solarized {
+  --bg-100:rgb(0, 43, 54);
+  --bg-200: rgb(5, 48, 59);
+  --text-100: rgb(147, 161, 161);
+  --text-200: rgb(131, 148, 150);
+  --ui-100: rgb(20, 83, 99);
+  --ui-200: rgb(42, 161, 152);
+  --highlight-accent: rgb(38, 139, 210);
+  --highlight-earned: rgb(133, 153, 0);
+  --highlight-unearned: rgb(220, 50, 47);
 }
 
 :root.forest {
-  --bg-100:rgb(20, 26, 38); 
-  --bg-200: rgb(25, 31, 44); 
-  --text-100: rgb(242, 242, 242);
-  --text-200: rgb(138, 138, 138);
-  --ui-100: rgb(35, 48, 75); 
-  --ui-200: rgb(26, 36, 58); 
-  --highlight-accent: rgb(27, 183, 255);
-  --highlight-earned: rgb(54, 211, 35);
-  --highlight-unearned: rgb(217, 96, 26);
-}
-
-:root.summer {
-  --bg-100:rgb(255, 245, 228); 
-  --bg-200: rgb(252, 235, 205);
-  --text-100: rgb(197, 111, 72);
-  --text-200: rgb(151, 114, 87);
-  --ui-100: rgb(255, 227, 225); 
-  --ui-200: rgb(255, 209, 209); 
-  --highlight-accent: rgb(27, 183, 255);
-  --highlight-earned: rgb(149, 225, 211);
-  --highlight-unearned: rgb(243, 129, 129);
+  --bg-100:#081c15;
+  --bg-200: #0b241b;
+  --text-100: #cad2c5;
+  --text-200: #2c5e3b;
+  --ui-100: #113a29;
+  --ui-200: #4a7a65;
+  --highlight-accent: #e9d947;
+  --highlight-earned: #4daf15;
+  --highlight-unearned: rgb(207, 95, 20);
 }
 
 body {
@@ -293,10 +317,11 @@ main {
 }
 
 footer {
+  margin-top: 4rem;
   margin-bottom: 4rem;
-  padding-top: 12px;
+  padding-top: 2rem;
   border-top: 1px solid var(--ui-100);
-  font-size: .875em;
+  font-size: .75em;
   color: var(--text-200);
 }
 
@@ -315,7 +340,7 @@ select {
   float: right;
   margin-right: 1em;
   padding: 4px 8px;
-  border: 1px solid var(--ui-100);
+  border: 1px solid var(--ui-200);
   border-radius: .25em;
   background-color: var(--bg-200);
   color: var(--text-200);
